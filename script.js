@@ -1,1 +1,4 @@
-file://%20javascript%20code%20to%20handle%20button%20clickdocument.getelementbyid('mybutton').addeventlistener('click',%20function()%20{%20%20%20%20document.getelementbyid('message').innertext%20=%20"button%20clicked!";});/
+// JavaScript code to handle button click
+document.getElementById('myButton').addEventListener('click', function() {
+    document.getElementById('message').innerText = "Button clicked!";
+});
