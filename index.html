@@ -3,36 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cell Structure and Functions Quiz</title>
+    <title>Breast Cancer Awareness</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Cell Structure and Functions Quiz</h1>
-        <div id="quiz-container">
-            <div id="question-container">
-                <h2 id="question">Loading question...</h2>
-                <div id="options-container">
-                    <!-- Options will be dynamically added here -->
-                </div>
-            </div>
-            <div id="timer-container">
-                <span id="timer">10</span> seconds left
-            </div>
-            <button id="next-button" class="hidden">Next Question</button>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul class="nav-bar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#symptoms">Symptoms</a></li>
+            <li><a href="#myths">Myths</a></li>
+            <li><a href="#facts">Facts</a></li>
+            <li><a href="#story">Survivor Story</a></li>
+            <li><a href="#donation">Donation</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header id="home">
+        <img src="https://img.freepik.com/premium-vector/isolated-pink-ribbon-vector-icon-versatile-design-breast-cancer-campaigns_1105246-1546.jpg?semt=ais_hybrid" alt="Breast Cancer Awareness" class="header-img">
+        <div class="header-content">
+            <h1>Breast Cancer Awareness</h1>
+            <p>Join us in spreading awareness and supporting those affected by breast cancer.</p>
+            <button class="scroll-button" onclick="smoothScroll('#facts')">Learn More</button>
+        </div>
+    </header>
+
+    <!-- Symptoms Section -->
+    <section id="symptoms">
+        <h2>Common Symptoms</h2>
+        <ul class="symptom-list">
+            <li><img src="https://my.clevelandclinic.org/-/scassets/Images/org/health/articles/3986-breast-cancer" alt="Lump in the breast"> Lump in the breast</li>
+            <li><img src="https://images.app.goo.gl/eTUF77YhsjwhfzWD6" alt="Changes in the breast size"> Changes in breast shape or size</li>
+            <li><img src="https://www.scitcentral.com/images/figure_139.png" alt="Skin dimpling"> Skin dimpling</li>
+            <li><img src="https://images.app.goo.gl/jP7yxatDEE9Ptzec6" alt="Nipple retraction"> Nipple retraction</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9jO8E4aXmN0q01Gtz2xKe5UssKiwsLOL14g&s" alt="Discharge from nipple"> Discharge from the nipple</li>
+        </ul>
+    </section>
+
+    <!-- Myths Section -->
+    <section id="myths">
+        <h2>Myths & Misconceptions</h2>
+        <p>Discover the truth behind common misconceptions about breast cancer.</p>
+        <ul>
+            <li>Myth: Only women with a family history are at risk.</li>
+            <li>Myth: Breast cancer only affects older women.</li>
+            <li>Myth: Finding a lump always means cancer.</li>
+            <li>Myth: Mammograms expose you to dangerous radiation.</li>
+        </ul>
+    </section>
+
+    <!-- Facts Section -->
+    <section id="facts">
+        <h2>Did You Know?</h2>
+        <p id="fact-rotator">Breast cancer is the most common cancer among women worldwide.</p>
+        <button onclick="toggleFactModal()">See More Facts</button>
+    </section>
+
+    <!-- Survivor Story Section -->
+    <section id="story">
+        <h2>Survivor Story</h2>
+        <img src="https://cdn.cancer.ca/-/media/images/about-us/hubs/stories/2020/4-breast-cancer-survivors-open-up-about-their-personal-experiences/2020-bcam-blog-sharon-500x333.png?h=333&iar=0&mw=543&w=500&rev=6b2af6a133c340d8af7e90b42f1d5a62&hash=85E6B803D670C0F69946D57CFF04E5A8" alt="Survivor Story" class="story-img">
+        <p>Kimberley was just 24 when she found a lump. Despite initial concerns, she sought medical attention and was diagnosed with breast cancer. With treatment and determination, Kimberley is now cancer-free and encourages others to know their bodies.</p>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donation">
+        <h2>Support Our Cause</h2>
+        <p>Your donations help provide support and resources to those affected by breast cancer.</p>
+        <button class="donate-button" onclick="toggleDonationModal()">Donate Now</button>
+    </section>
+
+    <!-- Fact Modal -->
+    <div id="factModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="toggleFactModal()">&times;</span>
+            <h3>More Facts</h3>
+            <ul id="additional-facts"></ul>
         </div>
     </div>
 
-    <!-- Donate Section -->
-    <div class="donate-section">
-        <h2>Please Donate</h2>
-        <p>Your support helps us maintain this platform and continue offering free education.</p>
-        <div class="donate-info">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX1j8_1o20igEk7AJyDYrJ_cH3dBXBr6jwuw&usqp=CAU" alt="Wave Logo" class="wave-logo">
-            <p>Phone Number: <strong>3709558</strong></p>
+    <!-- Donation Modal -->
+    <div id="donationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="toggleDonationModal()">&times;</span>
+            <h3>Make a Donation</h3>
+            <p>GT Bank Account Number: 2032202001590</p>
+            <p>Wave Mobile Money: +220 3709558</p>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
