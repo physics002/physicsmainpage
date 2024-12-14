@@ -1,35 +1,44 @@
-// Facts
-const facts = [
-    "Breast cancer is the most common cancer among women worldwide.",
-    "Men can also develop breast cancer.",
-    "Breastfeeding may lower the risk of breast cancer.",
-    "Early detection improves survival rates.",
-    "Healthy lifestyle choices can reduce risk.",
-    "Genetic mutations can increase risk.",
-    "Regular mammograms aid early detection."
-];
+document.getElementById('homeLink').addEventListener('click', function (e) {
+    // This ensures the link works both as an external link and potentially as a relative link
+    try {
+        window.location.href = this.href;
+    } catch (error) {
+        console.error('Navigation error:', error);
+    }
+});
 
-// Modal toggles
-function toggleFactModal() {
-    document.getElementById('factModal').classList.toggle('show-modal');
+// Optional: Add some interactive algebra-themed elements
+function createMathBackground() {
+    const symbols = ['x', 'y', '+', '-', '∫', '√', '∑', '∏', '='];
+    const container = document.body;
+
+    function createSymbol() {
+        const symbol = document.createElement('div');
+        symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        symbol.style.position = 'fixed';
+        symbol.style.fontSize = `${Math.random() * 20 + 10}px`;
+        symbol.style.color = 'rgba(0,0,0,0.1)';
+        symbol.style.left = `${Math.random() * 100}%`;
+        symbol.style.top = `${Math.random() * 100}%`;
+        symbol.style.zIndex = '-1';
+        container.appendChild(symbol);
+
+        // Animate symbol
+        const animation = symbol.animate([
+            { transform: 'translateY(0)' },
+            { transform: `translateY(${window.innerHeight}px)` }
+        ], {
+            duration: Math.random() * 10000 + 5000,
+            iterations: Infinity,
+            easing: 'linear'
+        });
+    }
+
+    // Create multiple background symbols
+    for (let i = 0; i < 50; i++) {
+        createSymbol();
+    }
 }
 
-function toggleDonationModal() {
-    document.getElementById('donationModal').classList.toggle('show-modal');
-}
-
-// Rotate facts
-let factIndex = 0;
-function rotateFacts() {
-    document.getElementById("fact-rotator").textContent = facts[factIndex];
-    factIndex = (factIndex + 1) % facts.length;
-}
-
-window.onload = () => {
-    setInterval(rotateFacts, 4000); // Rotate every 4 seconds
-};
-
-// Smooth Scroll
-function smoothScroll(target) {
-    document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
-}
+// Initialize background on page load
+createMathBackground();
