@@ -1,5 +1,4 @@
 document.getElementById('homeLink').addEventListener('click', function (e) {
-    // This ensures the link works both as an external link and potentially as a relative link
     try {
         window.location.href = this.href;
     } catch (error) {
@@ -23,7 +22,6 @@ function createMathBackground() {
         symbol.style.zIndex = '-1';
         container.appendChild(symbol);
 
-        // Animate symbol
         const animation = symbol.animate([
             { transform: 'translateY(0)' },
             { transform: `translateY(${window.innerHeight}px)` }
@@ -34,11 +32,9 @@ function createMathBackground() {
         });
     }
 
-    // Create multiple background symbols
     for (let i = 0; i < 50; i++) {
         createSymbol();
     }
 }
 
-// Initialize background on page load
 createMathBackground();
