@@ -57,7 +57,7 @@ body {
     max-width: 900px;
     margin: 20px auto;
     aspect-ratio: 16 / 9;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
 }
@@ -69,6 +69,26 @@ body {
     width: 100%;
     height: 100%;
     border: none;
+}
+
+.playlist-instructions {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #f9f4e3;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.instruction-icon {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-weight: bold;
 }
 
 .navigation {
@@ -92,7 +112,7 @@ body {
 .btn:hover {
     background-color: #2980b9;
     transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .algebra-description {
@@ -101,7 +121,7 @@ body {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -110,5 +130,9 @@ body {
     }
     .math-symbols {
         font-size: 3em;
+    }
+    .playlist-instructions {
+        padding: 15px;
+        font-size: 0.9em;
     }
 }
